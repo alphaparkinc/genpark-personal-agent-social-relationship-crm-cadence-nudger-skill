@@ -1,0 +1,36 @@
+{
+  "name": "genpark-personal-agent-social-relationship-crm-cadence-nudger-skill",
+  "version": "1.0.0",
+  "description": "Proactive Personal Agent Social Relationship CRM & Dunbar Cadence Nudger. Models concentric Dunbar social circles (Inner Circle 5, Close 15, Key Network 50, Active 150), tracks interaction recency and tie-strength decay across WhatsApp, WeChat, and Email, and synthesizes personalized episodic reconnection nudges.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "manage_personal_relationship_cadence",
+      "description": "Evaluate Dunbar tier tie-strength decay, identify overdue relationships, and synthesize personalized reconnection messages.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "evaluate_relationship_cadence",
+              "synthesize_reconnection_nudges"
+            ],
+            "description": "Personal CRM cadence action."
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Contacts list [name, dunbar_tier, days_since_last_contact, last_topic_memory, preferred_channel]."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    }
+  ]
+}
